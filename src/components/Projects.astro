@@ -1,0 +1,83 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const PROJECTS = [
+  {
+    title: "Netflix Movies and TV Shows Clustering Analysis",
+    description:
+      "A machine learning project that clusters Netflix content using various features like genre, cast, and description. Utilizes NLP techniques and clustering algorithms to group similar content together.",
+    github: "https://github.com/Patiladitya04/Netflix-Movies-and-TV-Shows-Clustering-model",
+    image: "/projects/netf.png"
+  },
+  {
+    title: "RoadSight - AI-Powered Road Condition Analysis",
+    description:
+      "An intelligent system that analyzes road conditions using computer vision and machine learning. Helps in identifying road damages and maintenance needs efficiently.",
+    github: "https://github.com/Patiladitya04/RoadSight",
+    image: "/projects/roadsight.png"
+  },
+  {
+    title: "FBI Crime Investigation - Time Series Forecasting Model",
+    description:
+      "A data science project focused on analyzing and forecasting crime trends using time series analysis. Implements various forecasting models to predict future crime patterns based on historical FBI crime data.",
+    github: "https://github.com/Patiladitya04/FBI-s_Crime_Investigation_Time_Series_Forecasting",
+    image: "/projects/FBI.png"
+  },
+  {
+    title: "EduCertify - Digital Certificate Management Application",
+    description:
+      "A comprehensive platform for managing and verifying digital certificates. Built with modern web technologies to provide a seamless experience for both issuers and verifiers.",
+    github: "https://github.com/Patiladitya04/EduCertify",
+    image: "/projects/certi.webp"
+  }
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {PROJECTS.map(({ image, title, description, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+      <div class="w-full md:w-1/2">
+        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <img 
+            alt={title} 
+            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" 
+            loading="lazy" 
+            src={image} 
+          />
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/2 md:max-w-lg">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+          {title}
+        </h3>
+        <div class="flex flex-col">
+          <div class="mt-2 text-gray-700 dark:text-gray-400">
+            {description}
+          </div>
+          
+          <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

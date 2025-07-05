@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Currently...",
+    title: "AI Engineer Intern",
+    company: "Labmantix",
+    description:
+      "Worked on building and optimizing ML models for real-world classification and prediction tasks. Preprocessed and analyzed 20k+ data points, implemented 4+ machine learning algorithms, and achieved up to 92% model accuracy. Gained hands-on experience with Python, Scikit-learn, and TensorFlow in a fast-paced R&D environment.",
+    
+  },
+  {
+    date: "July 2023",
+    title: "Flutter Developer Intern",
+    company: "DMS Solution and Computer Pvt. Ltd.",
+    description:
+      "Developed and optimized 3+ cross-platform mobile app modules using Flutter and Dart. Implemented 10+ UI screens with responsive design, integrated 5 REST APIs, and reduced UI load time by 25%. Collaborated in an Agile team to deliver weekly feature updates and bug fixes.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
