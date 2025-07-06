@@ -1,0 +1,65 @@
+---
+import BookOpen from "./icons/BookOpen.astro"
+
+const COURSES = [
+  {
+    title: " AI Engineer",
+    provider: "OneRoadMap",
+    image: "/courses/oneroad.png",
+    certificate: "https://oneroadmap.io/skills/ai/certificate/CERT-430200E2"
+  },
+  {
+    title: "Python for Data Science, AI & Development",
+    provider: "IBM",
+    image: "/courses/ibbm.png",
+    certificate: "https://www.coursera.org/account/accomplishments/verify/WNVE82W6WMN8"
+  },
+  {
+    title: " Data	Analytics	",
+    provider: "Deloitte",
+    image: "/courses/delo.png",
+    certificate: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_dMpZqwTybfvATxstn_1746607983835_completion_certificate.pdf"
+  },
+  {
+    title: "TensorFlow Developer Certificate",
+    provider: "TensorFlow",
+    image: "/courses/tensor.png",
+    certificate: "https://drive.google.com/file/d/1PnKXDQR4-c3LVrxZvDGHqjwDn5Z8ssih/view?usp=sharing"
+  },
+  {
+    title: "Finetuning Large Language Models",
+    provider: "DeepLearning.AI",
+    image: "/courses/udemy.png",
+    certificate: "https://learn.deeplearning.ai/accomplishments/b4cefb1d-8128-437a-8cfa-f338f5914f93?usp=sharing"
+  },
+
+]
+---
+
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {COURSES.map(({ title, provider, image, certificate }) => (
+    <a 
+      href={certificate} 
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex flex-col overflow-hidden transition-all duration-300 bg-white rounded-lg shadow-md dark:bg-gray-800 hover:shadow-xl hover:-translate-y-1 group h-full"
+    >
+      <div class="flex items-center justify-center bg-gray-100 dark:bg-gray-700 flex-grow">
+        <img 
+          src={image} 
+          alt={`${title} logo`} 
+          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white line-clamp-2">
+          {title}
+        </h3>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          {provider}
+        </p>
+      </div>
+    </a>
+  ))}
+</div>
